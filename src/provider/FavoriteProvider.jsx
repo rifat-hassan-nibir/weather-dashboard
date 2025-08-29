@@ -4,7 +4,7 @@ import { useLocalStorage } from "../hooks/index";
 const FavoriteProvider = ({ children }) => {
   const [favorites, setFavorites] = useLocalStorage("favorites", []);
 
-  const ToggleFavorites = (latitude, longitude, location) => {
+  const addToFavorites = (latitude, longitude, location) => {
     setFavorites([...favorites, { latitude, longitude, location }]);
   };
 
@@ -13,7 +13,7 @@ const FavoriteProvider = ({ children }) => {
     setFavorites(updatedFavorites);
   };
 
-  return <FavoriteContext.Provider value={{ favorites, ToggleFavorites, removeFromFavorites }}>{children}</FavoriteContext.Provider>;
+  return <FavoriteContext.Provider value={{ favorites, addToFavorites, removeFromFavorites }}>{children}</FavoriteContext.Provider>;
 };
 
 export default FavoriteProvider;
