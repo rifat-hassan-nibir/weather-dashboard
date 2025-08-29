@@ -1,6 +1,6 @@
 import heartIcon from "../../assets/heart.svg";
 
-export default function AddToFavorite() {
+export default function ToggleFavorite() {
   return (
     <div className="md:col-span-2">
       <div className="flex items-center justify-end space-x-6">
