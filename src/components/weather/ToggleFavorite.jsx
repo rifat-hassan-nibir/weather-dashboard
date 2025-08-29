@@ -12,8 +12,8 @@ export default function ToggleFavorite() {
   const isFavorite = favorites.some((fav) => fav.location === location);
 
   // Toggle favorite status
-  const handleToggleFavorite = () => {
-    if (isFavorite) {
+  const handleToggleFavorite = (favorite) => {
+    if (favorite) {
       removeFromFavorites(location);
     } else {
       addToFavorites(latitude, longitude, location);
@@ -24,8 +24,8 @@ export default function ToggleFavorite() {
     <div className="md:col-span-2">
       <div className="flex items-center justify-end space-x-6">
         <button
-          onClick={handleToggleFavorite}
-          className="hover:cursor-pointer text-sm md:text-base inline-flex items-center space-x-2 px-3 py-1.5 rounded-md bg-[#C5C5C54D]"
+          onClick={() => handleToggleFavorite(isFavorite)}
+          className="cursor-pointer text-sm md:text-base inline-flex items-center space-x-2 px-3 py-1.5 rounded-md bg-[#C5C5C54D]"
         >
           <span>Add to Favorite</span>
           <img src={isFavorite ? heartRedIcon : heartIcon} alt="favorite-toggle" />
