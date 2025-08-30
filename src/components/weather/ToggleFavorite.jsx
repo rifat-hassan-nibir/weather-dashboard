@@ -25,9 +25,9 @@ export default function ToggleFavorite() {
       <div className="flex items-center justify-end space-x-6">
         <button
           onClick={() => handleToggleFavorite(isFavorite)}
-          className="cursor-pointer text-sm md:text-base inline-flex items-center space-x-2 px-3 py-1.5 rounded-md bg-[#C5C5C54D]"
+          className="cursor-pointer text-sm md:text-base inline-flex items-center space-x-2 px-3 py-1.5 rounded-md bg-gray-500"
         >
-          <span>Add to Favorite</span>
+          <span className="text-white">Add to Favorite</span>
           <img src={isFavorite ? heartRedIcon : heartIcon} alt="favorite-toggle" />
         </button>
       </div>
